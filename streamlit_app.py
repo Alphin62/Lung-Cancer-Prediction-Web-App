@@ -9,7 +9,7 @@ import numpy as np
 import pickle
 import streamlit as st
 
-loaded_model = pickle.load(open('C:/Users\Lucifer.LAPTOP-19ER5RAR/Desktop/Internship/Assignment3/Deploy ML model/trained_model.sav','rb'))
+loaded_model = pickle.load(open('C:/Users/Lucifer.LAPTOP-19ER5RAR/Desktop/Internship/Assignment3/Deploy ML model/trained_model.sav','rb'))
 
 # creating a function for prediction
 
@@ -86,6 +86,3 @@ def main():
             "SWALLOWING_DIFFICULTY": swallow,
             "CHEST_PAIN": chest
             }
-        
-             
-             
