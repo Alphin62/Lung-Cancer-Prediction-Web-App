@@ -9,12 +9,11 @@ import numpy as np
 import pickle
 import streamlit as st
 
-loaded_model = pickle.load(open('C:/Users/Lucifer.LAPTOP-19ER5RAR/Desktop/Internship/Assignment3/Deploy ML model/trained_model.sav','rb'))
+loaded_model = pickle.load(open('trained_model.sav','rb'))
 
 # creating a function for prediction
 
 def lung_cancer_prediction(input_data):
-    
     
     # change the i/p data to np array
     input_data_as_np_array = np.asarray(input_data)
@@ -30,8 +29,7 @@ def lung_cancer_prediction(input_data):
     else:
         return 'Very high chance of having lung cancer. Need immediate checkup !!!!!'
     
-    
-    
+      
 def main():
     
     st.title("""# Lung Cancer Detection""")
