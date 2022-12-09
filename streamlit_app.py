@@ -9,28 +9,7 @@ import numpy as np
 import pickle
 import streamlit as st
 
-loaded_model = pickle.load('trained_model.sav')
 
-# creating a function for prediction
-
-def lung_cancer_prediction(input_data):
-       
-    # change the i/p data to np array
-    input_data_as_np_array = np.asarray(input_data)
-
-    # reshape the array as we are predicting for one instance
-    input_data_reshaped = input_data_as_np_array.reshape(1,-1)
-
-    prediction = loaded_model.predict(input_data_reshaped)
-    
-    print(prediction)
-
-    if (prediction[0] == 0):
-        return 'Chance of having lung cancer is low. Kindly be aware'
-    else:
-        return 'Very high chance of having lung cancer. Need immediate checkup !!!!!'          
-             
-    
 st.title("""# Lung Cancer Detection""")
 st.image("image.jpg")
 st.write("""
@@ -78,3 +57,25 @@ if st.button('Detection Result'):
     
     st.success(diagnosis)    
         
+loaded_model = pickle.load('trained_model.sav')
+
+# creating a function for prediction
+
+def lung_cancer_prediction(input_data):
+       
+    # change the i/p data to np array
+    input_data_as_np_array = np.asarray(input_data)
+
+    # reshape the array as we are predicting for one instance
+    input_data_reshaped = input_data_as_np_array.reshape(1,-1)
+
+    prediction = loaded_model.predict(input_data_reshaped)
+    
+    print(prediction)
+
+    if (prediction[0] == 0):
+        return 'Chance of having lung cancer is low. Kindly be aware'
+    else:
+        return 'Very high chance of having lung cancer. Need immediate checkup !!!!!'          
+             
+    
