@@ -8,9 +8,7 @@ Created on Fri Dec  9 02:23:32 2022
 import numpy as np
 import pickle
 import streamlit as st
-import joblib
-
-    
+   
   
 st.title("""# Lung Cancer Detection""")
 st.image("image.jpg")
@@ -66,7 +64,7 @@ if st.button('Detection Result'):
         "CHEST_PAIN": chest
         }
         
-loaded_model = joblib.load('trained_model.pkl')
+loaded_model = pickle.load('trained_model.pkl')
 
 # creating a function for prediction
 
