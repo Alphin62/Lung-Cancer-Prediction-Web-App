@@ -64,7 +64,7 @@ if st.button('Detection Result'):
         "CHEST_PAIN": chest
         }
         
-loaded_model = pickle.load(open('https://github.com/Alphin62/Lung-Cancer-Prediction-Web-App/blob/main/trained_model.pkl','rb'))
+loaded_model = pickle.load('https://github.com/Alphin62/Lung-Cancer-Prediction-Web-App/blob/main/trained_model.pkl')
 def lung_cancer_prediction(input_data):
      
     # change the i/p data to np array
