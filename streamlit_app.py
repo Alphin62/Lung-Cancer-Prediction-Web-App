@@ -9,7 +9,7 @@ import numpy as np
 import pickle
 import streamlit as st
 
-loaded_model = pickle.load(trained_model.sav)
+loaded_model = pickle.load('trained_model.sav')
 
 # creating a function for prediction
 
