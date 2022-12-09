@@ -64,7 +64,7 @@ if st.button('Detection Result'):
         "CHEST_PAIN": chest
         }
         
-loaded_model = pickle.load(trained_model.pkl)
+loaded_model = pickle.load('trained_model.pkl')
 
 # creating a function for prediction
 
