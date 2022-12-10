@@ -57,8 +57,7 @@ if st.button('Detection Result'):
     
     st.success(diagnosis)    
         
-loaded_model = pickle.load('Desktop/Internship/Assignment3/Deploy ML model/trained_model.sav')
-        
+loaded_model = pickle.load(open("C:/Users/Lucifer.LAPTOP-19ER5RAR/Desktop/Internship/Assignment3/Deploy ML model/trained_model.sav","rb"))
 
 # creating a function for prediction
 
