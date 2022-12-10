@@ -57,7 +57,7 @@ if st.button('Detection Result'):
     
     st.success(diagnosis)    
         
-loaded_model = pickle.load(open('https://github.com/Alphin62/Lung-Cancer-Prediction-Web-App/blob/main/streamlit_app.py','rb'))
+loaded_model = pickle.load(open('https://github.com/Alphin62/Lung-Cancer-Prediction-Web-App/blob/main/trained_model.sav','rb'))
          
          #'C:/Users/Lucifer.LAPTOP-19ER5RAR/Desktop/Internship/Assignment3/Deploy ML model/trained_model.sav','rb'))
 
