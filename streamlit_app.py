@@ -21,7 +21,29 @@ st.write("""
              
          **By Alphin Gnanaraj I**
          """)
-             
+
+loaded_model = pickle.load(open("trained_model.sav","rb"))
+
+# creating a function for prediction
+
+def lung_cancer_prediction(input_data):
+       
+    # change the i/p data to np array
+    input_data_as_np_array = np.asarray(input_data)
+
+    # reshape the array as we are predicting for one instance
+    input_data_reshaped = input_data_as_np_array.reshape(1,-1)
+
+    prediction = loaded_model.predict(input_data_reshaped)
+    
+    print(prediction)
+
+    if (prediction[0] == 0):
+        return 'Chance of having lung cancer is low. Kindly be aware'
+    else:
+        return 'Very high chance of having lung cancer. Need immediate checkup !!!!!'
+
+
 # creating a side bar for user input features   
       
 st.sidebar.header('Patients input features')
@@ -56,26 +78,4 @@ if st.button('Detection Result'):
     diagnosis = lung_cancer_prediction([gender,age,smoking,yellow_finger,anxiety,peer,chronic,fatigue,allergy,wheezing,alcohol,coughing,breath,swallow,chest]) 
     
     st.success(diagnosis)
-      
-loaded_model = pickle.load(open("trained_model.sav","rb"))
-
-# creating a function for prediction
-
-def lung_cancer_prediction(input_data):
-       
-    # change the i/p data to np array
-    input_data_as_np_array = np.asarray(input_data)
-
-    # reshape the array as we are predicting for one instance
-    input_data_reshaped = input_data_as_np_array.reshape(1,-1)
-
-    prediction = loaded_model.predict(input_data_reshaped)
-    
-    print(prediction)
-
-    if (prediction[0] == 0):
-        return 'Chance of having lung cancer is low. Kindly be aware'
-    else:
-        return 'Very high chance of having lung cancer. Need immediate checkup !!!!!'          
-             
-    
+              
