@@ -10,7 +10,7 @@ import pickle
 import streamlit as st
 
 
-st.title("""# Lung Cancer Detection""")
+st.title(""" Lung Cancer Detection""")
 st.image("image.jpg")
 st.write("""
          ## About
