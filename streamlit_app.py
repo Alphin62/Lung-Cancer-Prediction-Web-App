@@ -6,7 +6,7 @@ Created on Fri Dec  9 02:23:32 2022
 """
 
 import numpy as np
-import pickle as pk
+import pickle
 import streamlit as st
 
 
@@ -58,7 +58,7 @@ if st.button('Detection Result'):
     st.success(diagnosis)
 
 url = "https://github.com/Alphin62/Lung-Cancer-Prediction-Web-App/blob/main/trained_model.sav"        
-loaded_model = pk.load(url)
+loaded_model = pickle.load(open(url))
 
 # creating a function for prediction
 
