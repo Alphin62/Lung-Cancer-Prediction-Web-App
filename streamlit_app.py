@@ -57,7 +57,7 @@ if st.button('Detection Result'):
     
     st.success(diagnosis)    
 url = "https://github.com/Alphin62/Lung-Cancer-Prediction-Web-App/blob/main/trained_model.sav"        
-loaded_model = pickle.load(url)
+loaded_model = load(url)
 
 # creating a function for prediction
 
