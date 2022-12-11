@@ -6,7 +6,7 @@ Created on Fri Dec  9 02:23:32 2022
 """
 
 import numpy as np
-import pickle
+import pickle as pk
 import streamlit as st
 
 
@@ -55,9 +55,10 @@ diagnosis = ''
 if st.button('Detection Result'):
     diagnosis = lung_cancer_prediction([gender,age,smoking,yellow_finger,anxiety,peer,chronic,fatigue,allergy,wheezing,alcohol,coughing,breath,swallow,chest]) 
     
-    st.success(diagnosis)    
+    st.success(diagnosis)
+
 url = "https://github.com/Alphin62/Lung-Cancer-Prediction-Web-App/blob/main/trained_model.sav"        
-loaded_model = load(url)
+loaded_model = pk.load(url)
 
 # creating a function for prediction
 
